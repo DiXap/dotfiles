@@ -21,34 +21,34 @@ Plug 'rakr/vim-one'                  " One theme
 " IDE
 "
 Plug 'justinmk/vim-sneak' 													" Sneak
-Plug 'scrooloose/nerdtree'                          " File tree
-Plug 'christoomey/vim-tmux-navigator'               " File navigation
-Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion
-Plug 'honza/vim-snippets'                           " Snippets
-Plug 'junegunn/rainbow_parentheses.vim'             " Add color to bracket pairs
-Plug 'ryanoasis/vim-devicons'                       " File icons
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursors
-Plug 'sheerun/vim-polyglot'                         " Languaje pack
-Plug 'vim-airline/vim-airline'                      " Airlines
-Plug 'vim-airline/vim-airline-themes'               " Airline themes
+Plug 'scrooloose/nerdtree'                                   " File tree
+Plug 'christoomey/vim-tmux-navigator'                        " File navigation
+Plug 'neoclide/coc.nvim', {'branch': 'release'}              " Conquer of Completion
+Plug 'honza/vim-snippets'                                    " Snippets
+Plug 'junegunn/rainbow_parentheses.vim'                      " Add color to bracket pairs
+Plug 'ryanoasis/vim-devicons'                                " File icons
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}          " Multi cursors
+Plug 'sheerun/vim-polyglot'                                  " Languaje pack
+Plug 'vim-airline/vim-airline'                               " Airlines
+Plug 'vim-airline/vim-airline-themes'                        " Airline themes
 
 
-Plug 'wakatime/vim-wakatime'                        " Wakatime
-Plug 'godlygeek/tabular'                            " Tabular
+Plug 'wakatime/vim-wakatime'                                 " Wakatime
+Plug 'godlygeek/tabular'                                     " Tabular
 
-Plug 'iamcco/markdown-preview.nvim',                " Markdown Visualizer
+Plug 'iamcco/markdown-preview.nvim',                         " Markdown Visualizer
 	\ { 'do': { -> mkdp#util#install() },
 	\ 'for': ['markdown', 'vim-plug']}
 
-Plug 'tpope/vim-fugitive'                           " ==================
-Plug 'tpope/vim-rhubarb'                            " Git add-ons
-Plug 'junegunn/gv.vim'                              " 
-Plug 'mhinz/vim-signify'                            " ==================
+Plug 'tpope/vim-fugitive'                                    " ==================
+Plug 'tpope/vim-rhubarb'                                     " Git add-ons
+Plug 'junegunn/gv.vim'                                       "
+Plug 'mhinz/vim-signify'                                     " ==================
 
-Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' } " Sayonara buffer handler
-Plug 'tpope/vim-surround'                       " Insert surrounding pairs
-Plug 'kassio/neoterm'                           " Neoterm integration
-Plug 'unblevable/quick-scope'                   " QuickScope
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }              " Sayonara buffer handler
+Plug 'tpope/vim-surround'                                    " Insert surrounding pairs
+Plug 'kassio/neoterm'                                        " Neoterm integration
+Plug 'unblevable/quick-scope'                                " QuickScope
 
 
 
@@ -70,8 +70,7 @@ let g:qs_max_chars=150
 " ===============================
 
 
-let mapleader=" " 				    	 " Set leader key
-
+let mapleader=" "                " Set leader key
 colorscheme palenight            " Set colorscheme
 let g:airline_theme='minimalist' " Set airline theme
 
