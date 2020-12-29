@@ -14,13 +14,13 @@ call plug#begin('~/.config/nvim/plugged')
  
 " Themes
 "
-Plug 'morhetz/gruvbox'               								" Gruvbox theme
-Plug 'drewtempelmeyer/palenight.vim' 								" Palenight theme
-Plug 'rakr/vim-one'                  								" One theme
+Plug 'morhetz/gruvbox'               " Gruvbox theme
+Plug 'drewtempelmeyer/palenight.vim' " Palenight theme
+Plug 'rakr/vim-one'                  " One theme
 
 " IDE
 "
-Plug 'easymotion/vim-easymotion'                    " Easymotion
+Plug 'justinmk/vim-sneak' 													" Sneak
 Plug 'scrooloose/nerdtree'                          " File tree
 Plug 'christoomey/vim-tmux-navigator'               " File navigation
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion
@@ -45,14 +45,35 @@ Plug 'tpope/vim-rhubarb'                            " Git add-ons
 Plug 'junegunn/gv.vim'                              " 
 Plug 'mhinz/vim-signify'                            " ==================
 
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' } " Sayonara buffer handler
+Plug 'tpope/vim-surround'                       " Insert surrounding pairs
+Plug 'kassio/neoterm'                           " Neoterm integration
+Plug 'unblevable/quick-scope'                   " QuickScope
+
+
 
 call plug#end()
 
 
-let mapleader=" " 																	" Set leader key
+" ===== Sneak Highlight =====
+autocmd ColorScheme * hi Sneak guifg=black guibg=#C3E88D ctermfg=black ctermbg=114
+autocmd ColorScheme * hi SneakScope guifg=#292D3E guibg=#ff5370 ctermfg=235 ctermbg=204
+" ===========================
 
-colorscheme palenight																" Set colorscheme
-let g:airline_theme='minimalist' 										" Set airline theme
+" ==== QuickScope Highlight =====
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
+
+let g:qs_max_chars=150
+" ===============================
+
+
+let mapleader=" " 				    	 " Set leader key
+
+colorscheme palenight            " Set colorscheme
+let g:airline_theme='minimalist' " Set airline theme
 
 
 " ============================
@@ -147,14 +168,6 @@ set showtabline=2
 
 
 " ============================
-" ======= Easymotion =========
-
-nmap <Leader>s <Plug>(easymotion-s2) 
-
-" ============================
-
-
-" ============================
 " ======= NerdTree ===========
 
 nmap <Leader>nt :NERDTreeFind<CR>
@@ -175,23 +188,14 @@ let g:wakatime_PythonBinary = '/usr/bin/python' " Path to your python installati
 " ===== Markdown Preview =====
 
 let g:mkdp_auto_start = 0
-
 let g:mkdp_auto_close = 1
-
 let g:mkdp_refresh_slow = 0
-
 let g:mkdp_command_for_global = 0
-
 let g:mkdp_open_to_the_world = 0
-
 let g:mkdp_open_ip = ''
-
 let g:mkdp_browser = ''
-
 let g:mkdp_echo_preview_url = 0
-
 let g:mkdp_browserfunc = ''
-
 let g:mkdp_preview_options = {
     \ 'mkit': {},
     \ 'katex': {},
@@ -207,20 +211,52 @@ let g:mkdp_preview_options = {
     \ }
 
 let g:mkdp_markdown_css = ''
-
 let g:mkdp_highlight_css = ''
-
 let g:mkdp_port = ''
-
 let g:mkdp_page_title = '「${name}」'
-
 let g:mkdp_filetypes = ['markdown']
 
 " ============================
 
 
+" ============================
+" ========= Signify ==========
+" Change these if you want
+let g:signify_sign_add               = '+'
+let g:signify_sign_delete            = '_'
+let g:signify_sign_delete_first_line = '‾'
+let g:signify_sign_change            = '~'
+
+" I find the numbers disctracting
+let g:signify_sign_show_count = 0
+let g:signify_sign_show_text = 1
+
+" ============================
 
 
+" ============================
+" ========== Sneak ===========
+let g:sneak#label = 1
+
+" case insensitive sneak
+let g:sneak#use_ic_scs = 1
+
+" immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
+let g:sneak#s_next = 1
+
+map gS <Plug>Sneak_,
+map gs <Plug>Sneak_;
+
+" Cool prompts
+" let g:sneak#prompt = '🔍'
+
+" ============================
+
+
+
+" ===========================
+" ========== General ========
+" =========== Setup =========
 
 set number
 set mouse=a
@@ -237,6 +273,7 @@ set laststatus=2
 set noshowmode
 set nocompatible
 
+" ===========================
 
 
 " ============================
