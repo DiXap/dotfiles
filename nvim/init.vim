@@ -14,9 +14,9 @@ call plug#begin('~/.config/nvim/plugged')
  
 " Themes
 "
-Plug 'morhetz/gruvbox'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'rakr/vim-one' 																		
+Plug 'morhetz/gruvbox'               								" Gruvbox theme
+Plug 'drewtempelmeyer/palenight.vim' 								" Palenight theme
+Plug 'rakr/vim-one'                  								" One theme
 
 " IDE
 "
