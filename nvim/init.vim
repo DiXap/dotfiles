@@ -20,34 +20,30 @@ Plug 'rakr/vim-one'
 
 " IDE
 "
-Plug 'easymotion/vim-easymotion'													" Easymotion
-Plug 'scrooloose/nerdtree'																" File tree
-Plug 'christoomey/vim-tmux-navigator'											" File navigation
-Plug 'neoclide/coc.nvim', {'branch': 'release'}						" Conquer of Completion
-Plug 'honza/vim-snippets' 																" Snippets
-Plug 'junegunn/rainbow_parentheses.vim' 									" Add color to bracket pairs
-Plug 'ryanoasis/vim-devicons' 														" File icons
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} 			" Multi cursors
-Plug 'sheerun/vim-polyglot' 															" Languaje pack
-Plug 'vim-airline/vim-airline' 														" Airlines 
-Plug 'vim-airline/vim-airline-themes' 										" Airline themes 
+Plug 'easymotion/vim-easymotion'                    " Easymotion
+Plug 'scrooloose/nerdtree'                          " File tree
+Plug 'christoomey/vim-tmux-navigator'               " File navigation
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Conquer of Completion
+Plug 'honza/vim-snippets'                           " Snippets
+Plug 'junegunn/rainbow_parentheses.vim'             " Add color to bracket pairs
+Plug 'ryanoasis/vim-devicons'                       " File icons
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursors
+Plug 'sheerun/vim-polyglot'                         " Languaje pack
+Plug 'vim-airline/vim-airline'                      " Airlines
+Plug 'vim-airline/vim-airline-themes'               " Airline themes
 
-if has('nvim') || has('patch-8.0.902') 										" ==================	
-  Plug 'mhinz/vim-signify' 																" 
-else 																											"  Vim-signify 
-  Plug 'mhinz/vim-signify', { 'branch': 'legacy' } 				" 
-endif  			                                            	" ==================
 
-Plug 'wakatime/vim-wakatime' 															" Wakatime
-Plug 'godlygeek/tabular'     															" Tabular
+Plug 'wakatime/vim-wakatime'                        " Wakatime
+Plug 'godlygeek/tabular'                            " Tabular
 
-Plug 'iamcco/markdown-preview.nvim',                      " Markdown Visualizer
-			\ { 'do': { -> mkdp#util#install() },
-			\ 'for': ['markdown', 'vim-plug']} 
+Plug 'iamcco/markdown-preview.nvim',                " Markdown Visualizer
+	\ { 'do': { -> mkdp#util#install() },
+	\ 'for': ['markdown', 'vim-plug']}
 
-Plug 'tpope/vim-fugitive'                                 " ==================
-Plug 'tpope/vim-rhubarb'                                  " Git add-ons
-Plug 'junegunn/gv.vim'                                    " ==================
+Plug 'tpope/vim-fugitive'                           " ==================
+Plug 'tpope/vim-rhubarb'                            " Git add-ons
+Plug 'junegunn/gv.vim'                              " 
+Plug 'mhinz/vim-signify'                            " ==================
 
 
 call plug#end()
@@ -124,7 +120,7 @@ endif
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 augroup rainbow_lisp
   autocmd!
-  autocmd FileType lisp,clojure,python,java,javscript,scheme RainbowParentheses
+  autocmd FileType lisp,clojure,python,java,javscript,css,html,scheme RainbowParentheses
 augroup END
 
 " ============================
@@ -152,13 +148,13 @@ set showtabline=2
 " ============================
 
 
-
 " ============================
 " ======= Easymotion =========
 
 nmap <Leader>s <Plug>(easymotion-s2) 
 
 " ============================
+
 
 " ============================
 " ======= NerdTree ===========
@@ -168,12 +164,14 @@ let NERDTreeQuitOnOpen=1
 
 " ============================
 
+
 " ============================
 " ======= Wakatime ===========
 
 let g:wakatime_PythonBinary = '/usr/bin/python'
 
 " ============================
+
 
 " ============================
 " ===== Markdown Preview =====
@@ -211,7 +209,7 @@ let g:mkdp_open_ip = ''
 
 " specify browser to open preview page
 " default: ''
-let g:mkdp_browser = 'firefox'
+let g:mkdp_browser = ''
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0
@@ -289,6 +287,8 @@ set relativenumber
 set laststatus=2
 set noshowmode
 set nocompatible
+
+
 
 " ============================
 " ===== Custom Shorcuts ======
