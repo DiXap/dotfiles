@@ -121,7 +121,7 @@ endif
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 augroup rainbow_lisp
   autocmd!
-  autocmd FileType lisp,clojure,python,java,javscript,css,html,scheme RainbowParentheses
+  autocmd FileType python,java,javscript,css,html,scheme RainbowParentheses
 augroup END
 
 " ============================
