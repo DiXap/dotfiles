@@ -267,8 +267,7 @@ map gs <Plug>Sneak_;
 
 " Cool prompts
 
-"let g:sneak#prompt = '🔍'  " Change for an unicode icon that your terminl
- 													 " supports
+"let g:sneak#prompt = '🔍'  " Change for an unicode icon that your terminal supports
 
 " ============================
 
