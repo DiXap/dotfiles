@@ -32,14 +32,6 @@ Plug 'sheerun/vim-polyglot'                                  " Languaje pack
 Plug 'vim-airline/vim-airline'                               " Airlines
 Plug 'vim-airline/vim-airline-themes'                        " Airline themes
 
-
-Plug 'wakatime/vim-wakatime'                                 " Wakatime
-Plug 'godlygeek/tabular'                                     " Tabular
-
-Plug 'iamcco/markdown-preview.nvim',                         " Markdown Visualizer
-	\ { 'do': { -> mkdp#util#install() },
-	\ 'for': ['markdown', 'vim-plug']}
-
 Plug 'tpope/vim-fugitive'                                    " ==================
 Plug 'tpope/vim-rhubarb'                                     " Git add-ons
 Plug 'junegunn/gv.vim'                                       "
@@ -49,15 +41,20 @@ Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }              " Sayonara buffer h
 Plug 'tpope/vim-surround'                                    " Insert surrounding pairs
 Plug 'kassio/neoterm'                                        " Neoterm integration
 Plug 'unblevable/quick-scope'                                " QuickScope
+Plug 'godlygeek/tabular'                                     " Tabular
 
+Plug 'iamcco/markdown-preview.nvim',                         " Markdown Visualizer
+	\ { 'do': { -> mkdp#util#install() },
+	\ 'for': ['markdown', 'vim-plug']}
 
 
 call plug#end()
 
 
 " ===== Sneak Highlight =====
-autocmd ColorScheme * hi Sneak guifg=black guibg=#C3E88D ctermfg=black ctermbg=114
-autocmd ColorScheme * hi SneakScope guifg=#292D3E guibg=#ff5370 ctermfg=235 ctermbg=204
+" Optional for specific highlight
+" autocmd ColorScheme * hi Sneak guifg=black guibg=#C3E88D ctermfg=black ctermbg=114
+" autocmd ColorScheme * hi SneakScope guifg=#292D3E guibg=#ff5370 ctermfg=235 ctermbg=204
 " ===========================
 
 " ==== QuickScope Highlight =====
@@ -102,6 +99,18 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+
 " SHIFT + k to show documentatin in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -114,6 +123,12 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
 
 " ============================
 
@@ -150,15 +165,26 @@ augroup END
 " ============================
 " ========= Airlines =========
 let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = '|'
+
+let g:airline#extensions#tabline#show_tab_count = 2
+let g:airline#extensions#tabline#show_tab_nr = 1
+
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " enable powerline fonts
-let g:airline_powerline_fonts=1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+
+let g:airline#extensions#vimtex#enabled = 1
+
 
 " Always show tabs
 set showtabline=2
@@ -169,16 +195,8 @@ set showtabline=2
 " ============================
 " ======= NerdTree ===========
 
-nmap <Leader>nt :NERDTreeFind<CR>
+nmap <leader>nt :NERDTreeFind<CR>
 let NERDTreeQuitOnOpen=1
-
-" ============================
-
-
-" ============================
-" ======= Wakatime ===========
-
-let g:wakatime_PythonBinary = '/usr/bin/python' " Path to your python installation
 
 " ============================
 
@@ -243,11 +261,14 @@ let g:sneak#use_ic_scs = 1
 " immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
 let g:sneak#s_next = 1
 
+" remmaping back and foward movement keys
 map gS <Plug>Sneak_,
 map gs <Plug>Sneak_;
 
 " Cool prompts
-" let g:sneak#prompt = '🔍'
+
+"let g:sneak#prompt = '🔍'  " Change for an unicode icon that your terminl
+ 													 " supports
 
 " ============================
 
@@ -278,8 +299,8 @@ set nocompatible
 " ============================
 " ===== Custom Shorcuts ======
 
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
+nmap <leader>w :w<cr>
+nmap <leader>q :q<cr>
 
 " ============================
 
