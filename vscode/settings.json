@@ -1,0 +1,60 @@
+{
+    "editor.fontFamily": "'Fira Code iScript', 'Source Code Pro'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Eva Dark",
+    "editor.codeActionsOnSave": null,
+
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "entity.name.type.class", 
+            "keyword", 
+            "constant", 
+            "storage.modifier", 
+            "storage.type.class.js"
+          ],
+          "settings": {
+            "fontStyle": "italic bold"
+          }
+        },
+        {
+          "scope": [
+            "invalid",
+            "keyword.operator",
+            "constant.numeric.css",
+            "keyword.other.unit.px.css",
+            "constant.numeric.decimal.js",
+            "constant.numeric.json"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    },
+      "workbench.iconTheme": "material-icon-theme",
+      "python.languageServer": "Pylance",
+      "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "java.semanticHighlighting.enabled": true,
+      "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+      },
+      "java.refactor.renameFromFileExplorer": "autoApply",
+      "latex-workshop.view.pdf.viewer": "browser",
+      "window.zoomLevel": 0,
+      "workbench.activityBar.visible": true,
+      "material-icon-theme.folders.color": "#26a69a",
+      "C_Cpp.updateChannel": "Insiders",
+      "workbench.editorAssociations": []
+
+}
