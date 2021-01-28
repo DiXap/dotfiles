@@ -1,7 +1,7 @@
 " ============================
 " ===== Markdown Preview =====
 "  
-" Default setting from https://github.com/iamcco/markdown-preview.nvim
+" Default settings from https://github.com/iamcco/markdown-preview.nvim
 
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
