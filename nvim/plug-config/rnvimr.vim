@@ -2,7 +2,7 @@
 " ==== Ranger Neovim integration ====
 " https://github.com/kevinhwang91/rnvimr for additional config
 
-let g:rnvimr_ex_enable = 1
+let g:rnvimr_ex_enable = 1 	" Open ranger when vim opens a directory
 let g:rnvimr_draw_border = 1
 let g:rnvimr_pick_enable = 1
 
