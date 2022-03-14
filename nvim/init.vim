@@ -21,16 +21,14 @@ source $HOME/.config/nvim/plugs.vim
 	source $HOME/.config/nvim/plug-config/coc.vim
 	source $HOME/.config/nvim/plug-config/rainbow-parentheses.vim
 	source $HOME/.config/nvim/plug-config/airline.vim
-	source $HOME/.config/nvim/plug-config/waka-time.vim
-	source $HOME/.config/nvim/plug-config/markdown-preview.vim
 	source $HOME/.config/nvim/plug-config/signify.vim
-	source $HOME/.config/nvim/plug-config/neo-term.vim
 	source $HOME/.config/nvim/plug-config/fzf.vim
 	source $HOME/.config/nvim/plug-config/devicons.vim
 	source $HOME/.config/nvim/plug-config/indentLine.vim
 	source $HOME/.config/nvim/plug-config/ultisnips.vim
 	source $HOME/.config/nvim/plug-config/start-screen.vim
 	source $HOME/.config/nvim/plug-config/rnvimr.vim
+	source $HOME/.config/nvim/plug-config/vim-tex.vim
 	
 	" Theme config
 	" source $HOME/.config/nvim/theme-config/palenight.vim

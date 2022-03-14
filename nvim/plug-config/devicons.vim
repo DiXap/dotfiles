@@ -2,9 +2,7 @@
 " ============ DevIcons ===============
 " Setting custom icons per file type
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} 		" Needed 
-" let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['class'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
+" let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = '' 
 
 
 " Setting custom icons per specific name

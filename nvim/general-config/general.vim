@@ -1,6 +1,6 @@
 set termguicolors
 
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 let g:airline_theme='distinguished' " Airline theme by vim-airline 
 
@@ -32,7 +32,7 @@ set laststatus=2
 set noshowmode
 set nocompatible
 
-" ===========================
+" ============================
 
 
 " ============================
@@ -59,14 +59,9 @@ nmap <leader>ax :Sayonara<cr>
 nmap <leader>as :Sayonara!<cr>
 
 " Remapping ESC key
-inoremap ñ <ESC>
-cnoremap ñ <C-C>
-nnoremap ñ <ESC>
-vnoremap ñ <ESC>
-
-
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_altv = 1
+inoremap ñl <ESC>
+cnoremap ñl <C-C>
+nnoremap ñl <ESC>
+vnoremap ñl <ESC>
 
 " ============================
